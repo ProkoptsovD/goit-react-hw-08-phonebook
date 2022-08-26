@@ -1,0 +1,13 @@
+.MuiPopover-paper {
+    padding: 10px;
+}
+
+.MuiPopover-paper > :not(:last-child) {
+    margin-bottom: 4px;
+}
+.MuiPopover-paper > :first-child {
+    margin-bottom: 8px;
+}
+.MuiPopover-paper > :last-child {
+    margin-top: 8px;
+}
