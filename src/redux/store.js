@@ -1,31 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authApi } from "services/authApi";
 import { contactsApi } from "services/contactsApi";
-import { persistedRootReducer } from "./root.reducer";
-import {
-    persistStore,
-    FLUSH,
-    REHYDRATE,
-    PAUSE,
-    PERSIST,
-    PURGE,
-    REGISTER,
-} from 'redux-persist';
-
-const persistIgnoreActionTypes = {
-    serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-}
+import { rootReducer } from './root.reducer';
 
 const store = configureStore({
-    reducer: persistedRootReducer,
+    reducer: rootReducer,
     middleware: (getDefaultMiddleware) => [
-        ...getDefaultMiddleware(persistIgnoreActionTypes),
+        ...getDefaultMiddleware(),
         contactsApi.middleware,
         authApi.middleware
     ]
 })
 
-export const persistor = persistStore(store);
 export default store;
