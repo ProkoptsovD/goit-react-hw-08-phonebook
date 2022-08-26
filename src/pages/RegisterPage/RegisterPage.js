@@ -8,7 +8,7 @@ const AuthPage = () => {
     return (
         <StyledContainer>
             <Wrapper>
-                <BackLink to={ `/${ROUTES.LOGIN}` } />
+                <BackLink to={ ROUTES.LOGIN } />
                 <PageTitle>Register</PageTitle>
             </Wrapper>
             <AuthForm type={ FLAGS.authForm.register }/>
