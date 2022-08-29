@@ -33,12 +33,12 @@ export const App = () => {
                 } />
               </Route>
               <Route path={ ROUTES.REGISTER } element={
-                <PublicRoute>
+                <PublicRoute restricted>
                   <RegisterPage />
                 </PublicRoute>
               } />
               <Route path={ ROUTES.LOGIN } element={
-                <PublicRoute>
+                <PublicRoute restricted>
                   <LoginPage />
                 </PublicRoute>
               } />
