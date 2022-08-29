@@ -7,7 +7,6 @@ const defaultNavigate = `/${ROUTES.LOGIN}`
 
 export const PrivateRoute = ({ children, navigateTo = defaultNavigate }) => {
     const { token } = useAuth();
-    console.log(token);
 
     return (
         token ? children : <Navigate to={ navigateTo } replace={ true } />
