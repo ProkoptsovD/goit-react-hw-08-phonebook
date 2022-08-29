@@ -63,8 +63,8 @@ const ContactForm = ({ formTitle }) => {
     useEffect(() => {
         if(isRequestSucceed) {
             setIsSaved(true);
-            setShouldDisable(true)
-        }
+            setShouldDisable(true);
+        };
 
         return () => {
             if(isRequestSucceed || isEditMode) {
@@ -106,7 +106,9 @@ const ContactForm = ({ formTitle }) => {
     const handleClearBtnClick = () => {
         setName(''); 
         setNumber('');
-        setIsSaved(false)
+        setIsSaved(false);
+        
+        !isEditMode && setShouldDisable(false);
     };
 
     return (
@@ -144,7 +146,7 @@ const ContactForm = ({ formTitle }) => {
                     />
                     <AddContact
                         type="submit"
-                        disabled={ isSaved || shouldDisable }
+                        disabled={ shouldDisable }
                     >
                         { savedIcon }
                         { buttonText }

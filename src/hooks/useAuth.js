@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { authSelectors } from "redux/auth/auth.selectors";
 
@@ -7,5 +6,5 @@ export const useAuth = () => {
     const name = useSelector(authSelectors.getUserName);
     const isLoggedIn = !!token;
 
-    return useMemo(() => ({ token, isLoggedIn, name }), [token, name, isLoggedIn]);
+    return { token, isLoggedIn, name };
 }
