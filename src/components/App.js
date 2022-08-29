@@ -17,8 +17,6 @@ const LoginPage = lazy(() => import('../pages/LoginPage'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage'));
 
 export const App = () => {
-    const { isLoggedIn } = useAuth();
-
     return (
       <ThemeProvider theme={theme}>
         <DrawerContextProvider>
