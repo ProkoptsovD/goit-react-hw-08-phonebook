@@ -9,7 +9,6 @@ import { PrivateRoute, PublicRoute } from 'routes';
 import SharedLayout from './SharedLayout';
 
 import 'react-toastify/dist/ReactToastify.css';
-import { useAuth } from 'hooks';
 import { DrawerContextProvider, PopoverContextProvider } from 'contexts';
 
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
