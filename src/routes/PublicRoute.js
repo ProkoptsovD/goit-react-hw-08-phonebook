@@ -5,7 +5,7 @@ import { useAuth } from 'hooks';
 
 const defaultNavigate = ROUTES.HOME;
 
-export const PublicRoute = ({ children, restricted, navigateTo = defaultNavigate }) => {
+export const PublicRoute = ({ children, restricted = false, navigateTo = defaultNavigate }) => {
     const { token } = useAuth();
     const shouldRedirect = token && restricted;
 

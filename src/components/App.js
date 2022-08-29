@@ -36,12 +36,12 @@ export const App = () => {
                 } />
               </Route>
               <Route path={ ROUTES.REGISTER } element={
-                <PublicRoute restricted={isLoggedIn}>
+                <PublicRoute>
                   <RegisterPage />
                 </PublicRoute>
               } />
               <Route path={ ROUTES.LOGIN } element={
-                <PublicRoute restricted={isLoggedIn}>
+                <PublicRoute>
                   <LoginPage />
                 </PublicRoute>
               } />
