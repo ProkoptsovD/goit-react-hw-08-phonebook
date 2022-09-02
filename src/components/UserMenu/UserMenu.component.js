@@ -5,17 +5,14 @@ import { useGetLoggedInUserQuery, useLogoutUserMutation } from 'services/authApi
 import { UserName, UserEmail, Title, LogoutButton } from './UserMenu.styled';
 
 const UserMenu = () => {
-    const [ logoutUser, { isSuccess } ] = useLogoutUserMutation();
+    const [ logoutUser ] = useLogoutUserMutation();
     const { data } = useGetLoggedInUserQuery();
     const { openPopover, anchorEl, onClose } = usePopoverContext();
 
     const handleUserLogout = () => {
         logoutUser();
-
-        if(isSuccess) {
-            onClose()
-        }
-    }
+        onClose();
+    };
 
     return (
         <Popover

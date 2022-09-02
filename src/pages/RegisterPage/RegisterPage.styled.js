@@ -3,10 +3,10 @@ import Container from 'components/common/Container';
 
 export const StyledContainer = styled(Container)`
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+
+    padding-top: 40px;
 `;
 export const PageTitle = styled.h1`
     margin-bottom: 35px;

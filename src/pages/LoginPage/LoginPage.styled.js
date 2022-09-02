@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.span`
+    margin: 0 auto;
     padding-top: 10px;
     font-size: 0.85rem;
 `;

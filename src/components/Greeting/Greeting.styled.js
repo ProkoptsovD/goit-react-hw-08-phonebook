@@ -16,7 +16,7 @@ export const UserButton = styled(ButtonUnstyled)`
     transition: color 250ms linear;
 
     &:hover {
-        cursor: pointer;
-        color: var(--clr-accent-100);
+        cursor: ${(({ isguest }) => isguest === 'true' ? 'initial' : 'pointer')};
+        color: ${(({ isguest }) => isguest === 'true' ? 'inherit' : 'var(--clr-accent-100)')};
     }
 `;

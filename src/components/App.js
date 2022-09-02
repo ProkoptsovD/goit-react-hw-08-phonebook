@@ -21,27 +21,23 @@ export const App = () => {
         <DrawerContextProvider>
           <PopoverContextProvider>
             <Routes>
-              <Route path={ ROUTES.HOME } element={
+              <Route path={ ROUTES.HOME } element={ <PublicRoute><SharedLayout /></PublicRoute>}>
+                <Route path={ ROUTES.CONTACTS } element={
                   <PrivateRoute>
-                    <SharedLayout />
-                  </PrivateRoute>
-                }>
-                <Route index element={
-                  <PrivateRoute>
-                    <ContactsPage />
+                      <ContactsPage />
                   </PrivateRoute>
                 } />
+                <Route path={ ROUTES.REGISTER } element={
+                  <PublicRoute restricted>
+                    <RegisterPage />
+                  </PublicRoute>
+                } />
+                <Route path={ ROUTES.LOGIN } element={
+                  <PublicRoute restricted>
+                    <LoginPage />
+                  </PublicRoute>
+                } />
               </Route>
-              <Route path={ ROUTES.REGISTER } element={
-                <PublicRoute restricted>
-                  <RegisterPage />
-                </PublicRoute>
-              } />
-              <Route path={ ROUTES.LOGIN } element={
-                <PublicRoute restricted>
-                  <LoginPage />
-                </PublicRoute>
-              } />
             </Routes>    
           </PopoverContextProvider>  
         </DrawerContextProvider>    
