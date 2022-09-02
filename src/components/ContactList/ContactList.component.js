@@ -5,21 +5,10 @@ import { filterSelectors } from 'redux/filter/filter.selectors';
 import Contact from './Contact';
 import Empty from '../Empty';
 import Loader from 'components/common/Loader';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ROUTES } from 'constants';
 
 const ContactList = () => {
     const { data , error, isLoading  } = useGetAllContactsQuery();
     const filter = useSelector(filterSelectors.getFilter);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        const isUnauthorized = error?.status === 401;
-
-        if(isUnauthorized) navigate('/' + ROUTES.LOGIN)
-
-    }, [error, navigate])
     
     const hasData = data?.length && !error;
     const showLoader = !hasData && !isLoading;

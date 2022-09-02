@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { NAV_TABS } from 'constants';
+import { NAV_TABS, ROUTES } from 'constants';
 
 import Header from "components/Header";
 import Container from 'components/common/Container';
@@ -8,7 +8,6 @@ import Logo from "components/Logo";
 import Greeting from 'components/Greeting';
 import Loader from "components/common/Loader";
 import Navbar from "components/Navbar";
-import { ROUTES } from "constants";
 
 const SharedLayout = () => {
     const location = useLocation();
@@ -17,11 +16,9 @@ const SharedLayout = () => {
     useEffect(() => {
         const isHome = location?.pathname === ROUTES.HOME;
 
-        if(isHome) {
-            navigate(ROUTES.CONTACTS)
-        }
+        if(isHome) navigate(ROUTES.CONTACTS);
 
-    }, [location, navigate])
+    }, [location, navigate]);
 
     return (
         <>

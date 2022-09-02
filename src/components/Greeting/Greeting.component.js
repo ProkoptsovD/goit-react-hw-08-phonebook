@@ -23,7 +23,10 @@ const Greeting = () => {
                 >
                     { name ?? 'Guest' }
                 </UserButton>
-                { shouldRenderUserMenu ? <UserMenu /> : null }
+                { shouldRenderUserMenu
+                    ? <UserMenu />
+                    : null 
+                }
         </Wrapper>
     )
 }
